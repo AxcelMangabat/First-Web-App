@@ -1,6 +1,7 @@
 <?php
 
 include 'dbcon.php';
+require_once __DIR__ . '/mail_config.php';
 
 if (isset($_POST['signup'])) {
 
@@ -25,7 +26,7 @@ if (isset($_POST['signup'])) {
     mysqli_stmt_store_result($prepareQuery);
 
 
-    if(mysqli_stmt_num_rows($prepareQuery) > 0){
+    if (mysqli_stmt_num_rows($prepareQuery) > 0) {
         mysqli_stmt_close($prepareQuery);
 
         header('location:signupPage.php?email_msg=Email already exist');
@@ -42,36 +43,41 @@ if (isset($_POST['signup'])) {
             exit();
         }
 
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 
-            $query = "INSERT INTO users(`Name`, `Email`, `Username`, `Password`) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO users(`Name`, `Email`, `Username`, `Password`) VALUES (?, ?, ?, ?)";
 
-            $prepareQuery = mysqli_prepare($connection, $query);
+        $prepareQuery = mysqli_prepare($connection, $query);
 
-            mysqli_stmt_bind_param(
-                $prepareQuery,
-                "ssss",
-                $name,
-                $email,
-                $username,
-                $hashedPassword
-            );
+        mysqli_stmt_bind_param(
+            $prepareQuery,
+            "ssss",
+            $name,
+            $email,
+            $username,
+            $hashedPassword
+        );
 
-            $success = mysqli_stmt_execute($prepareQuery);
+        $success = mysqli_stmt_execute($prepareQuery);
 
-            mysqli_stmt_close($prepareQuery);
+        mysqli_stmt_close($prepareQuery);
 
-            if (!$success) {
-                header('Location: index.php?failed_msg=Account Creation Failed');
-                exit();
-            }
-
-            header('Location: index.php?success_msg=Account Created Successfully!');
+        if (!$success) {
+            header('Location: index.php?failed_msg=Account Creation Failed');
             exit();
+        }
+        $emailSent = sendWelcomeEmail($email, $name);
+
+        if (!$emailSent) {
+            error_log("Account created, but welcome email failed for a registered user.");
+        }
+
+        header('Location: index.php?success_msg=Account Created Successfully!');
+        exit();
 
 
-        
+
     }
 
 

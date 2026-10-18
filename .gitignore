@@ -1,0 +1,10 @@
+
+# Private email credentials
+.env
+
+# Installed Composer dependencies
+/vendor/
+
+# Windows files
+Thumbs.db
+Desktop.ini
