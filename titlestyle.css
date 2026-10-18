@@ -1,0 +1,629 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+}
+
+body {
+   display: grid;
+   grid-template-columns: 200px 84px 200px;
+   grid-template-rows: 60px 200px;
+   grid-template-areas:
+      "bar1 bar1 bar2 bar2"
+      "bar1 bar1 bar3 bar3"
+      "bar1 bar1 bar3 bar3";
+   width: 100vw;
+   height: 100dvh;
+   background-color: #051326;
+}
+
+body::-webkit-scrollbar {
+   display: none;
+}
+
+
+.title1 {
+   color: white;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   text-transform: uppercase;
+   font-weight: 400;
+   font-size: 1.5rem;
+   padding-left: 1rem;
+   border: none;
+   border-left: 2px solid gold;
+}
+
+.barUpper span {
+   text-transform: none;
+   color: goldenrod;
+}
+
+.titleside {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   padding: 1rem 0;
+   border: none;
+   border-bottom: 1px solid #1b1d21;
+   margin-bottom: 1rem;
+
+}
+
+.titleside h2 {
+   color: rgb(255, 255, 255);
+   font-family: "Manrope", sans-serif;
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 1.2rem;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+
+}
+
+.titleside h2 svg {
+   color: gold;
+   width: 3rem;
+   height: auto;
+}
+
+.title2 {
+   text-align: center;
+   letter-spacing: 2px;
+   font-family: "Manrope", sans-serif;
+   font-weight: 400;
+}
+
+.barUpper {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+   align-items: center;
+   padding: 1rem 5rem 1rem 1rem;
+   background: linear-gradient(to right, #090c10, #051326);
+   border: none;
+   border-bottom: #1b1d21;
+
+}
+
+
+aside {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   background-color: transparent;
+   height: 100%;
+   width: 100%;
+   padding: 1rem;
+   gap: 1rem;
+   background: linear-gradient(black, #010f21);
+   border-right: 2px solid #1b1d21;
+
+}
+
+#contentCon {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   flex: 1;
+   height: 100%;
+   width: 100%;
+   padding: 2rem;
+   background: radial-gradient(#051e2e, rgb(3, 3, 3));
+}
+
+
+
+.navBar {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   width: 100%;
+}
+
+.navBar ul {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   gap: 1rem;
+   align-items: start;
+   width: 100%;
+   margin-top: -0.5rem;
+   padding: 0;
+}
+
+.navLinks {
+   display: flex;
+   align-items: center;
+   text-transform: uppercase;
+   list-style: none;
+   gap: 1rem;
+}
+
+.navLinks li a svg {
+   width: 2rem;
+   height: auto;
+   fill: white;
+
+}
+
+.navLinks a {
+   text-decoration: none;
+   color: white;
+
+}
+
+.contentCard {
+   width: 100%;
+   height: auto;
+   background: radial-gradient(#07131b, #0e1418);
+   padding: 1rem;
+   border-radius: 1.5rem;
+   box-shadow: 0 0 8rem 1rem rgba(0, 0, 0, 0.148);
+}
+
+.navLinks li {
+   width: 100%;
+   padding: 0.5rem;
+   border-radius: 0.7rem;
+   transition: 0.3s ease;
+}
+
+.navLinks li:hover {
+   transition: 0.3s ease;
+   transform: translateY(-0.1rem) translateX(0.2rem);
+   background-color: rgba(255, 217, 0, 0.144);
+   color: white;
+}
+
+.navLinks li:hover svg {
+   color: black;
+   fill: gold;
+}
+
+#StudentRecords.active {
+   transition: 0.3s ease;
+   transform: translateY(-0.1rem) translateX(0.2rem);
+   background-color: rgba(255, 217, 0, 0.144);
+   color: white;
+}
+
+#StudentRecords svg.active {
+   color: black;
+   fill: gold;
+}
+
+#Profile.active {
+   transition: 0.3s ease;
+   transform: translateY(-0.1rem) translateX(0.2rem);
+   background-color: rgba(255, 217, 0, 0.144);
+   color: white;
+}
+
+#Profile svg.active {
+   color: black;
+   fill: gold;
+}
+
+#innerCon {
+   display: flex;
+   width: 100;
+}
+
+#labelCon {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+#labelCon h2 {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: 500;
+   color: white;
+   display: flex;
+   align-items: center;
+}
+
+#labelCon h2 svg {
+   width: 3rem;
+   height: auto;
+   color: black;
+   fill: gold;
+}
+
+#labelCon form {
+   outline: none;
+   border: 1px solid #1b1d21;
+   background-color: #090c10;
+   border-radius: 0.5rem;
+   padding: 0.5rem;
+   color: white;
+   width: 20%;
+   margin-right: -26rem;
+   ;
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+#labelCon form input {
+   outline: none;
+   border: 1px solid #1b1d21;
+   background-color: #090c10;
+   border-radius: 0.5rem;
+   padding: 0.5rem;
+   color: white;
+   width: 100%;
+}
+
+#labelCon form button {
+   width: 2.5rem;
+   height: auto;
+   padding: 0.1rem;
+   background-color: goldenrod;
+   border-radius: 0.2rem;
+}
+
+
+#labelCon button {
+   background: radial-gradient(gold, rgba(255, 217, 0, 0.932));
+   border: none;
+   outline: none;
+   color: black;
+   font-weight: 500;
+}
+
+#labelCon button:hover {
+   background: radial-gradient(gold, rgb(255, 217, 0));
+}
+
+#UpdateBtn {
+   background: radial-gradient(gold, rgba(255, 217, 0, 0.866));
+   border: none;
+   outline: none;
+}
+
+#UpdateBtn:hover {
+   background: radial-gradient(gold, rgb(255, 217, 0));
+}
+
+#UpdateBtn svg {
+   fill: white;
+   color: #1b1d21;
+}
+
+
+#RecordNav {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+   align-items: center;
+}
+
+
+.AheaderWithASVG {
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   gap: 1rem;
+   padding: 0.5rem;
+   width: 100%;
+   border: none;
+   border-bottom: 1px solid #1b1d21;
+   background-color: transparent;
+   backdrop-filter: blur(1rem);
+   margin-bottom: 1rem;
+}
+
+
+.AheaderWithASVG svg {
+   width: 5rem;
+   height: auto;
+   color: gold;
+   fill: gold;
+   padding: 0.2rem;
+   border: none;
+   border-bottom: 1px solid gold;
+   margin-top: -2rem;
+}
+
+.textBox {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: start;
+}
+
+.textBox h1 {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: 400;
+   color: white;
+}
+
+.textBox span {
+   color: goldenrod;
+}
+
+.textBox p {
+   color: grey;
+}
+
+
+
+.modal-content {
+   background: radial-gradient(rgb(70, 69, 69), rgb(41, 41, 41));
+   border-radius: 1rem;
+   box-shadow: 0 0 3rem 2rem rgba(0, 0, 0, 0.118);
+}
+
+.modal-body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   color: white;
+   gap: 1.5rem;
+}
+
+.footerContents {
+   width: 100%;
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 1rem;
+}
+
+.footerContents div {
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   justify-content: start;
+   width: auto;
+   padding: 0.2rem 0.3rem;
+   gap: 0.5rem;
+   border-radius: 0.4rem;
+}
+
+.footerContents div svg {
+   fill: red;
+   width: 1.5rem;
+   height: auto;
+   margin-top: -0.3rem;
+}
+
+.footerContents nav {
+   flex: 1;
+}
+
+#table2 {
+   display: none;
+}
+
+#table1.onclick {
+   display: none;
+}
+
+#table2.onclick {
+   display: table;
+}
+
+
+#ProfilePage {
+   display: none;
+   flex-direction: row;
+   justify-content: start;
+   align-items: start;
+   height: 100%;
+   width: 100%;
+   padding: 2rem;
+   background: radial-gradient(#051e2e, rgb(3, 3, 3));
+}
+
+
+.LogoutBox {
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: end;
+   width: 100%;
+   height: 100%;
+
+}
+
+.LogoutBox svg {
+   width: 1.5rem;
+   height: auto;
+   transform: rotate(180deg);
+   fill: white;
+}
+
+
+.LogoutBox button {
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   font-size: 1rem;
+   color: white;
+   background-color: rgba(255, 0, 0, 0.508);
+   border-radius: 1rem;
+   transition: 0.4s ease-in-out;
+   width: 100%;
+}
+
+
+.LogoutBox button:hover {
+   transform: translateY(-0.2rem);
+   color: white;
+   background-color: rgba(255, 0, 0, 0.863);
+   transition: 0.3s ease;
+}
+
+
+.profileCard {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: start;
+   padding: 0.5rem;
+   background: radial-gradient(#07131b, #0e1418);
+   border-radius: 1rem;
+   width: 100%;
+}
+
+
+.upperProfile {
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   width: 100%;
+   padding: 0.5rem;
+   border: none;
+   border-bottom: 1px solid #1b1d21;
+}
+
+.profileBox {
+   display: flex;
+   justify-Content: start;
+   align-items: start;
+   padding: 0.1rem;
+}
+
+.profileBox svg {
+   color: gold;
+   width: 5rem;
+   height: auto;
+   margin-right: 0.5rem;
+}
+
+
+
+.profileUppertext {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   margin-bottom: -0.5rem;
+}
+
+.profileUppertext h1 {
+   color: white;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: 400;
+
+}
+
+.profileUppertext span {
+   color: goldenrod;
+
+}
+
+.profileUppertext p {
+   color: grey;
+   margin-top: -1rem;
+}
+
+
+.formProfile {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: start;
+   width: 100%;
+   padding: 1rem;
+}
+
+.formProfile form {
+   width: 100%;
+}
+
+.formTitle {
+   margin-bottom: 1rem;
+}
+
+.formTitle span {
+   color: white;
+   font-weight: 600;
+   font-size: 1rem;
+}
+
+.divForms {
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: start;
+   margin-bottom: 0.5rem;
+}
+
+.profileIcons {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0.2rem;
+   margin-right: 1rem;
+}
+
+.divForms svg {
+   fill: gold;
+   color: black;
+   width: 2rem;
+   height: auto;
+}
+
+.pofileInfo label {
+   color: white;
+}
+
+.pofileInfo p {
+   color: grey;
+}
+
+.pofileInfo input {
+   color: grey;
+   border-radius: 0.5rem;
+   background-color: #070b10;
+   border: 1px solid darkgrey;
+   padding: 0.3rem;
+   width: 100%;
+}
+
+.footerButtonBox {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   width: 100%;
+}
+
+.footerButtonBox button {
+   display: flex;
+   flex-direction: row;
+   background-color: gold;
+   align-items: center;
+   padding: 0.3rem 1rem;
+   border: none;
+   border-radius: 0.5rem;
+   transition: 0.2s ease;
+   margin-right: 1rem;
+}
+
+.footerButtonBox button svg {
+   width: 1.5rem;
+   height: auto;
+}
+
+
+.footerButtonBox button:hover {
+   background-color: rgba(255, 217, 0, 0.504);
+   transition: 0.2s ease;
+}
