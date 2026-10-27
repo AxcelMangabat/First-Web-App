@@ -33,12 +33,20 @@ const StudentRecordsSVG = document.querySelector('#StudentRecords svg');
 const Profile = document.getElementById('Profile');
 const ProfileSVG = document.querySelector('#Profile svg');
 
-
 document.addEventListener('DOMContentLoaded', () => {
+    const contentCon = document.querySelector('#contentCon');
+    const profilePage = document.querySelector('#ProfilePage');
+
+   
+    if (!StudentRecords || !StudentRecordsSVG || !Profile || !ProfileSVG ||
+        !contentCon || !profilePage) {
+        return;
+    }
+
     StudentRecords.classList.add('active');
     StudentRecordsSVG.classList.add('active');
-    document.querySelector('#contentCon').style.display = "flex";
-    document.querySelector('#ProfilePage').style.display = "none";
+    contentCon.style.display = 'flex';
+    profilePage.style.display = 'none';
 });
 
 
